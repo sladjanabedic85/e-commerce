@@ -1,0 +1,43 @@
+* {
+    font-family: Arial, sans-serif;
+}
+:root {
+    --brand:#FBF1E9;
+    --bg: #f7f5f1;
+    --transition-speed: 0.3s;
+    --primary-black: #000;
+    --white: #ffffff;
+}
+body {
+    background: var(--bg);
+    font-family: 'Quicksand';
+    font-size: 17px;
+}
+.logo {
+    height: 55px;
+}
+.cart-badge {
+    position: absolute;
+    right: 0;
+    min-width: 22px;
+    height: 22px;
+    padding: 0 7px;
+    border-radius: 999px;
+    background: red;
+    color: white;
+    font-size: 12px;
+    font-weight: 700;
+    justify-content: center;
+    line-height: 2;
+    box-shadow: 0 0 0 2px rgba(255,255,255,0.7);
+}
+.shadow {
+    background: var(--brand);
+    font-size: 20px;
+}
+.shadow .nav-link, .shadow {
+    color: var(--primary-black);
+}
+.search-placeholder {
+     text-align: right;
+}
