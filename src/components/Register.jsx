@@ -57,7 +57,7 @@ function RegisterForm() {
                 }
             });
             navigate("/login");
-        } catch (error) {
+        } catch {
             setSubmitError("Registration failed. Please try again.");
         } finally {
             setIsSubmitting(false);
