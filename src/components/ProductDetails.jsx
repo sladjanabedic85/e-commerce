@@ -22,8 +22,7 @@ function ProductDetails() {
       .then((data) => {
         setProduct(data);
       })
-      .catch((error) => {
-        console.error("Greška pri učitavanju proizvoda:", error);
+      .catch(() => {
         setError("Neuspešno učitavanje proizvoda.");
       })
       .finally(() => {

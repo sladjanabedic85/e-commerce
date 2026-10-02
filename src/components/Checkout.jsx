@@ -61,7 +61,7 @@ function Checkout() {
       });
       setPaySuccess(true);
       clearCart();
-    } catch (error) {
+    } catch {
       setPayError("Payment could not be processed. Please try again.");
     } finally {
       setIsPaying(false);

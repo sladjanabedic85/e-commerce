@@ -4,9 +4,19 @@ import { ClipLoader } from "react-spinners";
 import { apiRequest } from "../api/apiClient";
 import ProductCard from "./ProductCard.jsx";
 
+const STORE_CATEGORIES = new Set(["men clothing", "women clothing", "footwear", "accessories"]);
+const CATEGORY_ALIASES = {
+  women: "women clothing",
+  men: "men clothing",
+  kids: "kids clothing",
+};
+
 function Products({ category }) {
   const [searchParams] = useSearchParams();
   const activeCategory = category || searchParams.get("category");
+  const normalizedCategory = activeCategory?.toLowerCase();
+  const requestedCategory = CATEGORY_ALIASES[normalizedCategory] || normalizedCategory;
+  const pageTitle = { women: "Women", men: "Men", kids: "Kids" }[normalizedCategory] || "All Products";
 
   const [products, setProducts] = useState([]);
   const [loading, setLoading] = useState(true);
@@ -17,7 +27,14 @@ function Products({ category }) {
     setError("");
     apiRequest("/products")
       .then((data) => {
-        setProducts(Array.isArray(data) ? data : data.products || []);
+        const fetchedProducts = Array.isArray(data)
+          ? data
+          : Array.isArray(data?.products)
+            ? data.products
+            : [];
+        setProducts(fetchedProducts.filter((product) =>
+          STORE_CATEGORIES.has(product.category?.toLowerCase())
+        ));
       })
       .catch(() => {
         setError("Failed to load products.");
@@ -28,7 +45,7 @@ function Products({ category }) {
   }, []);
 
   const filteredProducts = activeCategory
-    ? products.filter((product) => product.category === activeCategory)
+    ? products.filter((product) => product.category?.toLowerCase() === requestedCategory)
     : products;
 
   if (loading) {
@@ -46,7 +63,7 @@ function Products({ category }) {
 
   return (
     <div>
-      <h1 className="mb-6 text-2xl font-semibold">All Products</h1>
+      <h1 className="mb-6 text-2xl font-semibold">{pageTitle}</h1>
       {filteredProducts.length === 0 ? (
         <p>No products found.</p>
       ) : (

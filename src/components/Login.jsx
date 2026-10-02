@@ -47,7 +47,7 @@ function Login() {
       const matchedUser = users.find((user) => user.username === email || user.email === email);
       login(matchedUser || null, data.token);
       navigate("/");
-    } catch (error) {
+    } catch {
       setSubmitError("Invalid email or password.");
     } finally {
       setIsSubmitting(false);
