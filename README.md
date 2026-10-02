@@ -8,7 +8,9 @@ A responsive fashion e-commerce frontend built with React and Vite. Browse colle
 | --- | --- |
 | ![Modern Boutique home page](screenshots/homepage.png) | ![Modern Boutique product catalogue](screenshots/catalogue.png) |
 
-Mobile home preview: [screenshots/homepage-mobile.png](screenshots/homepage-mobile.png).
+## Mobile Preview
+
+![Modern Boutique mobile home page](screenshots/homepage-mobile.png)
 
 ## Requirements
 
