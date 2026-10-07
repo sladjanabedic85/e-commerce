@@ -35,24 +35,24 @@ const Home = () => {
         {/* Category Cards */}
         <div className="mb-12 grid gap-6 md:grid-cols-2 lg:grid-cols-3">
           <div className="flex flex-col items-center gap-4">
-            <Link to="/products?category=women" aria-label="Shop women">
-              <img src="/images/women.png" alt="Women" className="aspect-3/4 w-full object-cover" />
+            <Link to="/products?category=women" aria-label="Shop women" className="block w-full">
+              <img src="/images/women.png" alt="Women" className="block aspect-3/4 w-full object-cover" />
             </Link>
             <Button asChild id="btn-women">
               <Link to="/products?category=women">Women</Link>
             </Button>
           </div>
           <div className="flex flex-col items-center gap-4">
-            <Link to="/products?category=kids" aria-label="Shop kids">
-              <img src="/images/kids.png" alt="Kids" className="aspect-3/4 w-full object-cover" />
+            <Link to="/products?category=kids" aria-label="Shop kids" className="block w-full">
+              <img src="/images/kids.png" alt="Kids" className="block aspect-3/4 w-full object-cover" />
             </Link>
             <Button asChild id="btn-kids">
               <Link to="/products?category=kids">Kids</Link>
             </Button>
           </div>
           <div className="flex flex-col items-center gap-4">
-            <Link to="/products?category=men" aria-label="Shop men">
-              <img src="/images/men.png" alt="Men" className="aspect-3/4 w-full object-cover" />
+            <Link to="/products?category=men" aria-label="Shop men" className="block w-full">
+              <img src="/images/men.png" alt="Men" className="block aspect-3/4 w-full object-cover" />
             </Link>
             <Button asChild id="btn-men">
               <Link to="/products?category=men">Men</Link>
