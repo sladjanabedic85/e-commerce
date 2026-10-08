@@ -12,13 +12,13 @@ const Home = () => {
             <h2 className="mb-3 text-2xl font-semibold">Discover Brands</h2>
             <p>Discover a collection that blends style and comfort. Browse our carefully selected pieces of modern clothing that follow the latest trends while staying true to your unique style.</p>
           </div>
-          <div className="text-center">
-            <img src="/images/logo.png" alt="Logo" style={{ maxWidth: "150px" }} className="mx-auto" />
+          <div className="hidden lg:flex lg:justify-end">
+            <img src="/images/logo.png" alt="Logo" className="block h-auto w-full max-w-[76px]" />
           </div>
         </div>
 
         {/* Brand Images */}
-        <div className="flex flex-wrap items-center justify-center gap-8">
+        <div className="grid grid-cols-2 items-center justify-items-center gap-x-8 gap-y-6 sm:grid-cols-4">
           <img src="/images/bershka.png" alt="Bershka" />
           <img src="/images/h&m.png" alt="H&M" />
           <img src="/images/zara.png" alt="Zara" />
@@ -39,15 +39,15 @@ const Home = () => {
               <img src="/images/women.png" alt="Women" className="block aspect-3/4 w-full object-cover" />
             </Link>
             <Button asChild id="btn-women">
-              <Link to="/products?category=women">Women</Link>
+              <Link to="/products?category=women"><span className="relative top-px">Women</span></Link>
             </Button>
           </div>
           <div className="flex flex-col items-center gap-4">
-            <Link to="/products?category=kids" aria-label="Shop kids" className="block w-full">
-              <img src="/images/kids.png" alt="Kids" className="block aspect-3/4 w-full object-cover" />
+            <Link to="/products?category=kids" aria-label="Shop kids" className="block aspect-3/4 w-full overflow-hidden">
+              <img src="/images/kids.png" alt="Kids" className="translate-y-4 block h-full w-full scale-[1.16] object-cover" />
             </Link>
             <Button asChild id="btn-kids">
-              <Link to="/products?category=kids">Kids</Link>
+              <Link to="/products?category=kids"><span className="relative top-px">Kids</span></Link>
             </Button>
           </div>
           <div className="flex flex-col items-center gap-4">
@@ -55,7 +55,7 @@ const Home = () => {
               <img src="/images/men.png" alt="Men" className="block aspect-3/4 w-full object-cover" />
             </Link>
             <Button asChild id="btn-men">
-              <Link to="/products?category=men">Men</Link>
+              <Link to="/products?category=men"><span className="relative top-px">Men</span></Link>
             </Button>
           </div>
         </div>
